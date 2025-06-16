@@ -1,9 +1,8 @@
-/* Cores principais */
 :root {
-    --preto: #1c1c1c;
+    --preto: #121212;
     --dourado: #bfa048;
+    --cinza: #1f1f1f;
     --branco: #ffffff;
-    --lodo: #556b2f;
 }
 
 body {
@@ -11,28 +10,39 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--preto);
     color: var(--branco);
-    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    background-color: var(--lodo);
-    padding: 1rem 2rem;
+    background-color: var(--cinza);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 1rem 0;
 }
 
 .logo {
-    font-size: 1.5rem;
     color: var(--dourado);
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
@@ -48,19 +58,21 @@ nav a:hover {
 }
 
 .hero {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
     text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, var(--preto), var(--lodo));
+    background-color: var(--preto);
 }
 
 .hero h1 {
+    font-size: 2.8rem;
     color: var(--dourado);
-    font-size: 2.5rem;
 }
 
 .hero p {
-    margin: 1rem 0;
     font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .btn {
@@ -68,7 +80,8 @@ nav a:hover {
     color: var(--preto);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-weight: bold;
     transition: background 0.3s;
 }
 
@@ -76,24 +89,27 @@ nav a:hover {
     background-color: #a88c36;
 }
 
-.sobre, .areas, .contato {
-    padding: 3rem 2rem;
+.areas, .sobre, .contato {
+    padding: 4rem 0;
+    background-color: var(--cinza);
+    margin-top: 1rem;
 }
 
-.sobre h2, .areas h2, .contato h2 {
+h2 {
     color: var(--dourado);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .card {
-    background-color: #2e2e2e;
-    padding: 1rem;
+    background-color: var(--preto);
+    padding: 1.5rem;
     border-left: 5px solid var(--dourado);
     border-radius: 5px;
 }
@@ -121,27 +137,17 @@ form button:hover {
 }
 
 footer {
+    background-color: var(--preto);
     text-align: center;
     padding: 1rem;
-    background-color: var(--lodo);
-    color: var(--branco);
     font-size: 0.9rem;
 }
 
-/* ---------------- MEDIA QUERIES PARA RESPONSIVIDADE ----------------- */
-
-/* Dispositivos pequenos (largura até 768px - tablets e celulares) */
+/* Responsividade */
 @media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
-        width: 100%;
         margin-top: 1rem;
     }
 
@@ -149,64 +155,22 @@ footer {
         font-size: 2rem;
     }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        display: inline-block;
-        margin-top: 1rem;
-    }
-
     .cards {
         grid-template-columns: 1fr;
     }
-
-    form input, form textarea, form button {
-        font-size: 1rem;
-    }
 }
 
-/* Dispositivos muito pequenos (largura até 480px - celulares pequenos) */
 @media (max-width: 480px) {
-
-    header {
-        padding: 1rem;
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .logo {
         font-size: 1.2rem;
     }
 
-    .hero {
-        padding: 2rem 1rem;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
     .hero p {
-        font-size: 0.9rem;
-    }
-
-    .sobre, .areas, .contato {
-        padding: 2rem 1rem;
-    }
-
-    .cards {
-        gap: 0.5rem;
-    }
-
-    .card h3 {
-        font-size: 1.1rem;
-    }
-
-    form input, form textarea, form button {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
