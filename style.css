@@ -1,0 +1,212 @@
+/* Cores principais */
+:root {
+    --preto: #1c1c1c;
+    --dourado: #bfa048;
+    --branco: #ffffff;
+    --lodo: #556b2f;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--lodo);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--dourado);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--dourado);
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--preto), var(--lodo));
+}
+
+.hero h1 {
+    color: var(--dourado);
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.btn {
+    background-color: var(--dourado);
+    color: var(--preto);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #a88c36;
+}
+
+.sobre, .areas, .contato {
+    padding: 3rem 2rem;
+}
+
+.sobre h2, .areas h2, .contato h2 {
+    color: var(--dourado);
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: #2e2e2e;
+    padding: 1rem;
+    border-left: 5px solid var(--dourado);
+    border-radius: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: var(--dourado);
+    color: var(--preto);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #a88c36;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--lodo);
+    color: var(--branco);
+    font-size: 0.9rem;
+}
+
+/* ---------------- MEDIA QUERIES PARA RESPONSIVIDADE ----------------- */
+
+/* Dispositivos pequenos (largura até 768px - tablets e celulares) */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    form input, form textarea, form button {
+        font-size: 1rem;
+    }
+}
+
+/* Dispositivos muito pequenos (largura até 480px - celulares pequenos) */
+@media (max-width: 480px) {
+
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .sobre, .areas, .contato {
+        padding: 2rem 1rem;
+    }
+
+    .cards {
+        gap: 0.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
